@@ -73,18 +73,6 @@ export default function Nav() {
             Workouts
           </Link>
           <Link
-            href='/schedule'
-            className='block py-2 px-4 text-sm text-white hover:bg-green-700'
-          >
-            Schedule
-          </Link>
-          <Link
-            href='/nutrition'
-            className='block py-2 px-4 text-sm text-white hover:bg-green-700'
-          >
-            Nutrition
-          </Link>
-          <Link
             href='/profile'
             className='block py-2 px-4 text-sm text-white hover:bg-green-700'
           >
