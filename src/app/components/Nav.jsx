@@ -11,7 +11,7 @@ export default function Nav() {
     <nav className='bg-green-600 shadow-lg'>
       <div className='max-w-6xl mx-auto px-4'>
         <div className='flex justify-between'>
-          <div className='flex space-x-7'>
+          <div className='flex space-x-8'>
             <div>
               <Link href='/' className='flex items-center py-4 px-2'>
                 <Dumbbell className='h-8 w-8 mr-2 text-white' />
