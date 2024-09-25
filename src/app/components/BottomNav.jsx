@@ -1,43 +1,37 @@
 'use client';
+
 import Link from 'next/link';
-import { Goal, Dumbbell, House, GlassWater, SmilePlus } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { Goal, Dumbbell, Home, GlassWater, SmilePlus } from 'lucide-react';
+
+const navItems = [
+  { href: '/goal', icon: Goal, label: 'Goal' },
+  { href: '/workout', icon: Dumbbell, label: 'Workout' },
+  { href: '/', icon: Home, label: 'Home' },
+  { href: '/water', icon: GlassWater, label: 'Water' },
+  { href: '/motivation', icon: SmilePlus, label: 'Motivation' },
+];
 
 export default function BottomNav() {
+  const pathname = usePathname();
+
   return (
-    <nav className='bg-green-600 shadow-lg' role='navigation'>
-      <div className='max-w-6xl mx-auto px-4'>
-        <div className='flex justify-between items-center h-16'>
-          <div className='flex flex-col items-center justify-center'>
-            <Link href='/'>
-              <Goal />
-            </Link>
-            <span>Goal</span>
-          </div>
-          <div className='flex flex-col items-center justify-center'>
-            <Link href='/'>
-              <Dumbbell />
-            </Link>
-            <span>Workout</span>
-          </div>
-          <div className='flex flex-col items-center justify-center'>
-            <Link href='/'>
-              <House />
-            </Link>
-            <span>Home</span>
-          </div>
-          <div className='flex flex-col items-center justify-center'>
-            <Link href='/'>
-              <GlassWater />
-            </Link>
-            <span>Water</span>
-          </div>
-          <div className='flex flex-col items-center justify-center'>
-            <Link href='/'>
-              <SmilePlus />
-            </Link>
-            <span>Motivation</span>
-          </div>
-        </div>
+    <nav className='fixed bottom-0 left-0 right-0 bg-green-400 shadow-lg'>
+      <div className='flex justify-between items-center max-w-md mx-auto'>
+        {navItems.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={
+              pathname === item.href
+                ? 'flex flex-col items-center justify-center p-2 rounded-lg bg-green-500 text-white'
+                : 'flex flex-col items-center justify-center p-2 rounded-lg text-green-800'
+            }
+          >
+            <item.icon className='h-6 w-6' />
+            <span className='text-xs mt-1'>{item.label}</span>
+          </Link>
+        ))}
       </div>
     </nav>
   );
