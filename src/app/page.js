@@ -29,7 +29,7 @@ export default function FitnessTracker() {
       </div>
 
       {/* Weight Loss Chart Section */}
-      <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
+      <div className="rounded-lg shadow-md p-6 space-y-4">
         <h2 className="text-xl font-semibold text-gray-700">Weight Loss Chart</h2>
         <div className="h-48 flex items-center justify-center bg-gray-200 text-gray-400 rounded">
           Placeholder for chart
