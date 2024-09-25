@@ -1,94 +1,92 @@
 import Link from 'next/link';
-import { Mail, Lock, User, UserPlus } from 'lucide-react';
+import { Mail, Lock } from 'lucide-react';
+import { Dumbbell } from 'lucide-react';
 
-export default function SignUpPage() {
+export default function LoginPage() {
   return (
-    <div className='min-h-screen flex items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-8'>
-      <div className='max-w-md w-full space-y-8 p-6 sm:p-10 bg-white rounded-xl shadow-md'>
-        <div className='text-center'>
-          <h2 className='mt-6 text-2xl sm:text-3xl font-extrabold text-gray-900'>
-            Create a new account
-          </h2>
-          <p className='mt-2 text-sm text-gray-600'>
-            Or{' '}
-            <Link
-              href='/auth/login'
-              className='font-medium text-blue-600 hover:text-blue-500'
-            >
-              sign in to your account
-            </Link>
-          </p>
-        </div>
-        <form className='mt-8 space-y-6' action='#' method='POST'>
-          <div className='rounded-md shadow-sm -space-y-px'>
-            <div className='relative'>
-              <label htmlFor='name' className='sr-only'>
-                Full Name
-              </label>
-              <User
-                className='absolute top-1/2 left-3 -translate-y-1/2 text-gray-400'
-                size={20}
-              />
+    <div className="min-h-screen flex items-center justify-center bg-gray-500 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8">
+       <div className="text-center">
+  <h2 className="mt-2 text-3xl font-bold text-teal-400">SIGN UP</h2>
+  <p className="text-teal-300 hover:text-teal-200 text-sm font-medium">
+    Let’s get started. Are you ready for a simpler path to a healthier, 
+    stronger you? Your journey starts here!
+  </p>
+</div>
+
+        <form className="mt-8 space-y-6" action="#" method="POST">
+          <div className="rounded-md shadow-sm space-y-4">
+            
+            <div className="relative flex items-center">
+              <Mail className="absolute left-3 text-teal-400" size={20} />
               <input
-                id='name'
-                name='name'
-                type='text'
-                autoComplete='name'
+                id="email-address"
+                name="email"
+                type="email"
+                autoComplete="email"
                 required
-                className='appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                placeholder='Full Name'
+                className="appearance-none rounded-full block w-full pl-10 py-2 border border-transparent bg-white-100 placeholder-teal-300 text-teal-900 focus:outline-none focus:ring-teal-400 focus:border-teal-400 sm:text-sm"
+                placeholder="Email"
               />
             </div>
-            <div className='relative'>
-              <label htmlFor='email-address' className='sr-only'>
-                Email address
-              </label>
-              <Mail
-                className='absolute top-1/2 left-3 -translate-y-1/2 text-gray-400'
-                size={20}
-              />
+
+            
+            <div className="relative flex items-center">
+              <Lock className="absolute left-3 text-teal-400" size={20} />
               <input
-                id='email-address'
-                name='email'
-                type='email'
-                autoComplete='email'
+                id="password"
+                name="password"
+                type="password"
+                autoComplete="current-password"
                 required
-                className='appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                placeholder='Email address'
+                className="appearance-none rounded-full block w-full pl-10 py-2 border border-transparent bg-white-100 placeholder-teal-300 text-teal-900 focus:outline-none focus:ring-teal-400 focus:border-teal-400 sm:text-sm"
+                placeholder="Password"
               />
             </div>
-            <div className='relative'>
-              <label htmlFor='password' className='sr-only'>
-                Password
-              </label>
-              <Lock
-                className='absolute top-1/2 left-3 -translate-y-1/2 text-gray-400'
-                size={20}
-              />
+
+            <div className="relative flex items-center">
+              <Lock className="absolute left-3 text-teal-400" size={20} />
               <input
-                id='password'
-                name='password'
-                type='password'
-                autoComplete='new-password'
+                id="password"
+                name="password"
+                type="password"
+                autoComplete="current-password"
                 required
-                className='appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                placeholder='Password'
+                className="appearance-none rounded-full block w-full pl-10 py-2 border border-transparent bg-white-100 placeholder-teal-300 text-teal-900 focus:outline-none focus:ring-teal-400 focus:border-teal-400 sm:text-sm"
+                placeholder="Confirm"
               />
             </div>
           </div>
 
+         
+          <div className="flex items-center">
+  <input
+    id="terms"
+    name="terms"
+    type="checkbox"
+    required
+    className="h-4 w-4 text-teal-400 border-gray-300 rounded focus:ring-teal-400"
+  />
+  <label htmlFor="terms" className="ml-2 block text-sm text-teal-300">
+    I agree to the terms and conditions
+  </label>
+</div>
+
+          
           <div>
-            <Link
-              href={'/auth/signup-details'}
-              className='group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+            <button
+              type="submit"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-gray-500 bg-teal-300 hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-400"
             >
-              <span className='absolute left-0 inset-y-0 flex items-center pl-3'>
-                <UserPlus
-                  className='h-5 w-5 text-blue-500 group-hover:text-blue-400'
-                  aria-hidden='true'
-                />
-              </span>
-              Sign up
+              Sign Up
+            </button>
+          </div>
+
+         
+          <div className="text-center mt-4">
+            <Link href="/auth/signup" className="text-teal-300 hover:text-teal-200 text-sm font-medium">
+              Already have an account? Login
+
             </Link>
           </div>
         </form>
