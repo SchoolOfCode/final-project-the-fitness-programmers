@@ -1,43 +1,53 @@
 import Link from 'next/link';
-import { Ruler, Weight, Target, ArrowRight } from 'lucide-react';
+import {
+  ContactRound,
+  CalendarDays,
+  Ruler,
+  Weight,
+  Target,
+  ArrowRight,
+  SmartphoneCharging,
+} from 'lucide-react';
 
 export default function UserDetailsPage() {
   return (
-    <div className='min-h-screen flex items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-8'>
-      <div className='max-w-md w-full space-y-8 p-6 sm:p-10 bg-white rounded-xl shadow-md'>
+    <div className='min-h-screen bg-main px-4 sm:px-6 lg:px-8'>
+      <div className='max-w-md w-full space-y-8 sm:p-10'>
         <div className='text-center'>
-          <h2 className='mt-6 text-2xl sm:text-3xl font-extrabold text-gray-900'>
-            Complete Your Profile
+          <h2 className='pt-32 text-2xl sm:text-3xl font-extrabold text-primaryColour'>
+            We just need some more details...
           </h2>
-          <p className='mt-2 text-sm text-gray-600'>
-            Please provide some additional information
-          </p>
         </div>
-        <form className='mt-8 space-y-6' action='#' method='POST'>
-          <div className='rounded-md shadow-sm -space-y-px'>
+        <form className='space-y-6 ' action='#' method='POST'>
+          <div className='rounded-md shadow-sm -space-y-px flex flex-col gap-8  justify-center'>
+            {/* Name */}
             <div className='relative'>
-              <label htmlFor='height' className='sr-only'>
-                Height (cm)
-              </label>
-              <Ruler
-                className='absolute top-1/2 left-3 -translate-y-1/2 text-gray-400'
-                size={20}
-              />
+              <ContactRound className='absolute left-2 top-2 text-black' />
               <input
                 id='height'
                 name='height'
                 type='number'
                 required
-                className='appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
-                placeholder='Height (cm)'
+                className='block w-full px-3 py-2 pl-10 border  placeholder-primaryColour text-primaryColour rounded-full focus:outline-none focus:ring-blue-500 focus:border-primaryColour-500 focus:z-10 sm:text-sm block'
+                placeholder='Name'
               />
             </div>
+            {/* Age */}
             <div className='relative'>
-              <label htmlFor='weight' className='sr-only'>
-                Weight (kg)
-              </label>
+              <CalendarDays className='absolute left-2 top-2 text-black' />
+              <input
+                id='height'
+                name='height'
+                type='number'
+                required
+                className='block w-full px-3 py-2 pl-10 border  placeholder-primaryColour text-primaryColour rounded-full focus:outline-none focus:ring-blue-500 focus:border-primaryColour-500 focus:z-10 sm:text-sm block'
+                placeholder='Age'
+              />
+            </div>
+            {/* Weight */}
+            <div className='relative'>
               <Weight
-                className='absolute top-1/2 left-3 -translate-y-1/2 text-gray-400'
+                className='absolute left-3 top-2.5 text-black'
                 size={20}
               />
               <input
@@ -45,45 +55,48 @@ export default function UserDetailsPage() {
                 name='weight'
                 type='number'
                 required
-                className='appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
+                className='block w-full px-3 py-2 pl-10 border  placeholder-primaryColour text-primaryColour rounded-full focus:outline-none focus:ring-blue-500 focus:border-primaryColour-500 focus:z-10 sm:text-sm block'
                 placeholder='Weight (kg)'
               />
             </div>
+            {/* Height */}
             <div className='relative'>
-              <label htmlFor='goal' className='sr-only'>
-                Goal
-              </label>
-              <Target
-                className='absolute top-1/2 left-3 -translate-y-1/2 text-gray-400'
+              <Ruler className='absolute left-2 top-2 text-black' />
+              <input
+                id='height'
+                name='height'
+                type='number'
+                required
+                className='block w-full px-3 py-2 pl-10 border  placeholder-primaryColour text-primaryColour rounded-full focus:outline-none focus:ring-blue-500 focus:border-primaryColour-500 focus:z-10 sm:text-sm block'
+                placeholder='Height (cm)'
+              />
+            </div>
+            {/* Activity level */}
+            <div className='relative'>
+              <SmartphoneCharging
+                className='absolute left-3 top-2.5 text-black'
                 size={20}
               />
               <select
                 id='goal'
                 name='goal'
                 required
-                className='appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm'
+                className='block w-full px-3 py-2 pl-10 border  placeholder-primaryColour text-primaryColour rounded-full focus:outline-none focus:ring-blue-500 focus:border-primaryColour-500 focus:z-10 sm:text-sm block'
               >
-                <option value=''>Select your goal</option>
-                <option value='lose_weight'>Lose Weight</option>
-                <option value='gain_muscle'>Gain Muscle</option>
-                <option value='maintain'>Maintain Weight</option>
-                <option value='improve_fitness'>Improve Fitness</option>
+                <option value=''>Activity level</option>
+                <option value='lose_weight'>Low</option>
+                <option value='gain_muscle'>Med</option>
+                <option value='maintain'>High</option>
               </select>
             </div>
           </div>
-
+          {/* Submit button */}
           <div>
             <Link
               href='/dashboard'
-              className='group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+              className='relative w-full flex justify-center py-2 px-4 border border-transparent text-l font-medium rounded-full text-white bg-primaryColour font-extrabold'
             >
-              <span className='absolute left-0 inset-y-0 flex items-center pl-3'>
-                <ArrowRight
-                  className='h-5 w-5 text-blue-500 group-hover:text-blue-400'
-                  aria-hidden='true'
-                />
-              </span>
-              Continue
+              Submit
             </Link>
           </div>
         </form>

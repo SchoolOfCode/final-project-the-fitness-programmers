@@ -5,7 +5,7 @@ import { Dumbbell, UserRound } from 'lucide-react';
 
 export default function Nav() {
   return (
-    <nav className='bg-nav shadow-lg sticky top-0 z-50'>
+    <nav className='bg-primaryColour shadow-lg sticky top-0 z-50'>
       <div className='max-w-6xl mx-auto px-4'>
         <div className='flex justify-between items-center h-16'>
           <Link href='/' className='flex items-center'>
