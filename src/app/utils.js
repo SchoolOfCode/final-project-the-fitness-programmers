@@ -7,32 +7,21 @@ export default async function getData(id) {
   return data;
 }
 
-//Use it on Frontend
-// useEffect(() => {
-//     async function fetchUserData() {
-//       const userData = await getData(1);
-//       console.log(userData);
-//     }
-
-//     fetchUserData();
-//   }, []);
-
 //Update user data in the database
-export const updateUser = async (id, updatedData) => {
-  const response = await fetch(`/api/user/${id}`, {
+export const updateUserData = async (userId, updatedData) => {
+  const response = await fetch(`/api/user/${userId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(updatedData),
   });
-
-  const data = await response.json();
-  console.log("Updated User:", data);
+  const updatedUser = await response.json();
+  console.log("Updated user:", updatedUser);
 };
 
 //Update user example usage
-//updateUser(1, { currentweight: decimal, targetweight: decimal });
+//updateUserData(1, { currentweight: decimal, targetweight: decimal });
 
 //Add a new workout to the user data
 export const addWorkout = async (id, updatedData) => {
@@ -50,17 +39,3 @@ export const addWorkout = async (id, updatedData) => {
 
 //Add workout example usage
 //addWorkout(1, { type: string, duration: decimal });
-
-//Update target weight in the user data
-export const updateTargetWeight = async (id, updatedData) => {
-  const response = await fetch(`/api/user/${id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(updatedData),
-  });
-
-  const data = await response.json();
-  console.log("Updated User:", data);
-};

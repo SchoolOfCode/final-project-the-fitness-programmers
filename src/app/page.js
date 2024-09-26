@@ -68,6 +68,7 @@ export default function FitnessTracker() {
         {/* Daily Stats Section */}
         <div className="bg-offwhite rounded-lg p-6 space-y-4">
           <h2 className="text-xl text-center font-semibold text-offblack">
+
             Daily Stats
           </h2>
           <div className="text-center grid grid-cols-2 gap-4">

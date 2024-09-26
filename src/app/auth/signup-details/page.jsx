@@ -22,7 +22,7 @@ export default function UserDetailsPage() {
           <div className='rounded-md shadow-sm -space-y-px flex flex-col gap-8  justify-center'>
             {/* Name */}
             <div className='relative'>
-              <ContactRound className='absolute left-2 top-2 text-black' />
+              <ContactRound className='absolute left-2 top-2 text-teal-400' />
               <input
                 id='height'
                 name='height'
@@ -34,7 +34,7 @@ export default function UserDetailsPage() {
             </div>
             {/* Age */}
             <div className='relative'>
-              <CalendarDays className='absolute left-2 top-2 text-black' />
+              <CalendarDays className='absolute left-2 top-2 text-teal-400' />
               <input
                 id='height'
                 name='height'
@@ -47,7 +47,7 @@ export default function UserDetailsPage() {
             {/* Weight */}
             <div className='relative'>
               <Weight
-                className='absolute left-3 top-2.5 text-black'
+                className='absolute left-3 top-2.5 text-teal-400'
                 size={20}
               />
               <input
@@ -61,7 +61,7 @@ export default function UserDetailsPage() {
             </div>
             {/* Height */}
             <div className='relative'>
-              <Ruler className='absolute left-2 top-2 text-black' />
+              <Ruler className='absolute left-2 top-2 text-teal-400' />
               <input
                 id='height'
                 name='height'
@@ -74,7 +74,7 @@ export default function UserDetailsPage() {
             {/* Activity level */}
             <div className='relative'>
               <SmartphoneCharging
-                className='absolute left-3 top-2.5 text-black'
+                className='absolute left-3 top-2.5 text-teal-400'
                 size={20}
               />
               <select
@@ -94,7 +94,7 @@ export default function UserDetailsPage() {
           <div>
             <Link
               href='/dashboard'
-              className='relative w-full flex justify-center py-2 px-4 border border-transparent text-l font-medium rounded-full text-white bg-primaryColour font-extrabold'
+              className='relative w-full flex justify-center py-2 px-4 border border-transparent text-l font-medium rounded-full text-gray-500 bg-primaryColour font-extrabold'
             >
               Submit
             </Link>

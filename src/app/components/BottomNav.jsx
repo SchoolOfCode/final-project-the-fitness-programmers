@@ -1,9 +1,15 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Goal, Dumbbell, Home, GlassWater, SmilePlus } from 'lucide-react';
-import toast, { Toaster } from 'react-hot-toast';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import {
+  Goal,
+  Dumbbell,
+  Home,
+  GlassWater,
+  SmilePlus,
+} from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
 
 const navItems = [
   { href: '/goal-setter', icon: Goal, label: 'Goal' },
@@ -17,25 +23,24 @@ export default function BottomNav() {
 
   const fetchMotivationalQuote = async () => {
     try {
-      const response = await fetch('https://api.quotable.io/random?tags=motivational');
+      const response = await fetch("https://zenquotes.io/api/random");
       const data = await response.json();
-      
+
       if (response.ok) {
-        
         toast.custom((t) => (
           <div
             className={`${
-              t.visible ? 'animate-enter' : 'animate-leave'
+              t.visible ? "animate-enter" : "animate-leave"
             } max-w-md w-full bg-white border-r-5  shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
           >
             <div className="flex-1 w-0 p-4">
               <div className="flex items-start">
                 <div className="ml-3 flex-1">
                   <p className="text-sm font-medium text-gray-900">
-                    {data.content}
+                    {data.q}
                   </p>
                   <p className="mt-1 text-sm text-gray-500 text-center">
-                     {data.author}
+                    {data.a}
                   </p>
                 </div>
               </div>
@@ -51,10 +56,10 @@ export default function BottomNav() {
           </div>
         ));
       } else {
-        toast.error('Failed to fetch motivational quote.');
+        toast.error("Failed to fetch motivational quote.");
       }
     } catch (error) {
-      toast.error('An error occurred while fetching the quote.');
+      toast.error("An error occurred while fetching the quote.");
     }
   };
 
@@ -68,22 +73,23 @@ export default function BottomNav() {
             href={item.href}
             className={
               pathname === item.href
-                ? 'flex flex-col items-center justify-center p-2 rounded-lg bg-teal-500 font-bold'
-                : 'flex flex-col items-center justify-center p-2 rounded-lg text-green-800'
+                ? "flex flex-col items-center justify-center p-2 rounded-lg bg-teal-500 font-bold"
+                : "flex flex-col items-center justify-center p-2 rounded-lg text-green-800"
             }
           >
-            <item.icon className='h-6 w-6 text-white' />
-            <span className='text-xs mt-1 text-white'>{item.label}</span>
+            <item.icon className="h-6 w-6 text-white" />
+            <span className="text-xs mt-1 text-white">
+              {item.label}
+            </span>
           </Link>
         ))}
 
-        
         <button
-          type='button'
-          className='text-white rounded-lg justify-center items-center flex flex-col text-xs'
+          type="button"
+          className="text-white rounded-lg justify-center items-center flex flex-col text-xs"
           onClick={fetchMotivationalQuote}
         >
-          <SmilePlus className='h-6 w-6 text-white' />
+          <SmilePlus className="h-6 w-6 text-white" />
           Motivation
         </button>
       </div>
