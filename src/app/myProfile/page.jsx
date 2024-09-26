@@ -1,5 +1,4 @@
 import { user } from '../data';
-import Link from 'next/link';
 import Image from 'next/image';
 import BottomNav from '../components/BottomNav';
 import Nav from '../components/Nav';

@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import TextBox from '../components/TextBox';
-import Nav from './components/Nav';
-import BottomNav from './components/BottomNav';
+import Nav from '../components/Nav';
+import BottomNav from '../components/BottomNav';
 
 export default function WaterTracker() {
   const handleValueChange = (value) => {
