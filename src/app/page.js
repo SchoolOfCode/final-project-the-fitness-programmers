@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import getData from "./utils.js";
-import Nav from '/components/Nav';
-import BottomNav from '/components/BottomNav';
+import Nav from './components/Nav';
+import BottomNav from './components/BottomNav';
 import Chart from '/components/Chart'
 
 export default function FitnessTracker() {
