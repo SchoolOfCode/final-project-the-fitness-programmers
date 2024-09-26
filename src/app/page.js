@@ -48,7 +48,7 @@ export default function FitnessTracker() {
           <h2 className="text-xl font-semibold text-gray-700">
             Weight Progress
           </h2>
-          <div className="grid grid-cols-3 gap-4 text-center">
+          <div className="grid grid-cols-3 gap-3 text-center">
             <WeightStat label="Start" value={`${startweight} kg`} />
             <WeightStat label="Current" value={`${currentweight} kg`} />
             <WeightStat label="Target" value={`${targetweight} kg`} />
