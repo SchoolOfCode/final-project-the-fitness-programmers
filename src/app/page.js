@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import getData from "./utils.js";
-import Nav from './components/Nav';
-import BottomNav from './components/BottomNav';
-import WeightLossChart from './components/Chart'
+import Nav from "./components/Nav";
+import BottomNav from "./components/BottomNav";
+import WeightLossChart from "./components/Chart";
 
 export default function FitnessTracker() {
   const [data, setData] = useState(null);
@@ -51,7 +51,10 @@ export default function FitnessTracker() {
         <div className="bg-offwhite rounded-lg  p-6 space-y-4">
           <div className="grid grid-cols-3 gap-3 text-center">
             <WeightStat label="Start" value={`${startweight} kg`} />
-            <WeightStat label="Current" value={`${currentweight} kg`} />
+            <WeightStat
+              label="Current"
+              value={`${currentweight} kg`}
+            />
             <WeightStat label="Target" value={`${targetweight} kg`} />
           </div>
         </div>
@@ -68,7 +71,6 @@ export default function FitnessTracker() {
         {/* Daily Stats Section */}
         <div className="bg-offwhite rounded-lg p-6 space-y-4">
           <h2 className="text-xl text-center font-semibold text-offblack">
-
             Daily Stats
           </h2>
           <div className="text-center grid grid-cols-2 gap-4">
@@ -82,6 +84,21 @@ export default function FitnessTracker() {
             />
             <DailyStat label="Workout Time / Goal" value="1 hour" />
             <DailyStat label="Average Workout Time" value="30 mins" />
+          </div>
+        </div>
+        <div className="bg-offwhite rounded-lg p-6 space-y-4">
+          <h2 className="text-xl text-center font-semibold text-offblack">
+            Workouts
+          </h2>
+          <div className="text-center grid grid-cols-2 gap-4">
+            {data.workouts.map((item, index) => {
+              return (
+                <div key={index}>
+                  <p>{item.type}</p>
+                  <p>{`${item.duration} mins`}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
