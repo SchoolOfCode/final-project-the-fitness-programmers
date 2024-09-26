@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import getData from "./utils.js";
 import Nav from './components/Nav';
 import BottomNav from './components/BottomNav';
-import WeightLossChart from './components/WeightLossChart';
+import Chart from './components/Chart'
 
 export default function FitnessTracker() {
   const [data, setData] = useState(null);
@@ -62,7 +62,7 @@ export default function FitnessTracker() {
         {/* Weight Loss Chart Section */}
         <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
           <h1>Weight Loss Progress</h1>
-          <WeightLossChart
+          <Chart
             startWeight={user.startweight}
             currentWeight={user.currentweight}
             goalWeight={user.targetweight}
