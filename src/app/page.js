@@ -39,16 +39,16 @@ export default function FitnessTracker() {
   return (
     <>
       <Nav />
-      <div className="min-h-screen bg-gray-50 p-4 space-y-6 max-w-lg mx-auto font-sans">
-        <h1 className="text-2xl font-bold text-primaryColour text-center">
+      <div className="min-h-screen bg-applegreen mb-14 p-4 space-y-6 max-w-lg mx-auto font-sans">
+        <h1 className="text-2xl font-bold text-offblack text-center">
           Welcome, {user.name}
         </h1>
-        <h1 className="text-xl font-bold text-gray-800 text-center">
+        <h1 className="text-xl font-bold text-offblack text-center">
           Progress tracker...
         </h1>
 
         {/* Weight Progress Section */}
-        <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
+        <div className="bg-offwhite rounded-lg  p-6 space-y-4">
           <div className="grid grid-cols-3 gap-3 text-center">
             <WeightStat label="Start" value={`${startweight} kg`} />
             <WeightStat label="Current" value={`${currentweight} kg`} />
@@ -57,8 +57,7 @@ export default function FitnessTracker() {
         </div>
 
         {/* Weight Loss Chart Section */}
-        <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
-          <h1>Weight Loss Progress</h1>
+        <div className="bg-offwhite rounded-lg p-6 space-y-4">
           <WeightLossChart
             startWeight={user.startweight}
             currentWeight={user.currentweight}
@@ -67,11 +66,11 @@ export default function FitnessTracker() {
         </div>
 
         {/* Daily Stats Section */}
-        <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
-          <h2 className="text-xl font-semibold text-gray-700">
+        <div className="bg-offwhite rounded-lg p-6 space-y-4">
+          <h2 className="text-xl text-center font-semibold text-offblack">
             Daily Stats
           </h2>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="text-center grid grid-cols-2 gap-4">
             <DailyStat
               label="Target Calories"
               value={`${targetcalories} kcal`}
@@ -94,7 +93,7 @@ export default function FitnessTracker() {
 function WeightStat({ label, value }) {
   return (
     <div>
-      <p className="text-sm text-gray-500">{label}</p>
+      <p className="text-sm text-gray">{label}</p>
       <p className="text-lg font-semibold text-gray-800">{value}</p>
     </div>
   );
@@ -104,8 +103,8 @@ function WeightStat({ label, value }) {
 function DailyStat({ label, value }) {
   return (
     <div>
-      <p className="text-sm text-gray-500">{label}</p>
-      <p className="text-lg font-semibold text-gray-800">{value}</p>
+      <p className="text-sm text-fitbitgrey">{label}</p>
+      <p className="text-lg font-semibold text-offblack">{value}</p>
     </div>
   );
 }

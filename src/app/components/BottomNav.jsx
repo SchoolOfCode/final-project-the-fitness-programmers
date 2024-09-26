@@ -61,7 +61,7 @@ export default function BottomNav() {
 
   return (
     <nav className='fixed bottom-0 left-0 right-0 shadow-lg bg-primaryColour'>
-      <div className='flex gap-12 items-center max-w-md mx-auto'>
+      <div className='flex gap-8 justify-center items-center max-w-md mx-auto'>
         {navItems.map((item) => (
           <Link
             key={item.href}

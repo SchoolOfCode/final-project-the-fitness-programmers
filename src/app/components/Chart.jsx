@@ -32,7 +32,7 @@ export default function WeightLossChart({
   };
 
   return (
-    <div className='w-full max-w-3xl mx-auto p-4 bg-gray-100 rounded-lg shadow-md text-gray-800'>
+    <div className='w-full max-w-3xl mx-auto p-4 bg-gray-100 rounded-lg text-gray-800'>
       <h2 className='text-2xl font-bold mb-4 text-center text-gray-700'>
         {title}
       </h2>
@@ -42,7 +42,6 @@ export default function WeightLossChart({
             <XAxis dataKey='name' />
             <YAxis domain={['dataMin - 5', 'dataMax + 5']} />
             <Tooltip />
-            <Legend />
             <Bar dataKey='weight' radius={[4, 4, 0, 0]}>
               {data.map((entry, index) => (
                 <React.Fragment key={`${entry.name}-${index}`}>
