@@ -84,7 +84,7 @@ export default function LoginPage() {
 
          
           <div className="text-center mt-4">
-            <Link href="/auth/signup" className="text-teal-300 hover:text-teal-200 text-sm font-medium">
+            <Link href="/auth/login" className="text-teal-300 hover:text-teal-200 text-sm font-medium">
               Already have an account? Login
 
             </Link>
