@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.spin {
+  width: 50px;
+  aspect-ratio: 1/1;
+  margin: auto;
+  margin-top: 30%;
+}
+.spin::after {
+  content: "";
+  display: block;
+  width: 50px;
+  aspect-ratio: 1/1;
+  border: 5px solid #333;
+  border-radius: 50%;
+  border-color: #333 transparent #333 transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
