@@ -1,18 +1,39 @@
 "use client";
-import { user } from "./data.js";
+import { useEffect, useState } from "react";
+import getData from "./utils.js";
 import Nav from './components/Nav';
 import BottomNav from './components/BottomNav';
 
 export default function FitnessTracker() {
-  if (!user) return <div className="p-4 text-center">Loading...</div>;
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
+  //Use it on Frontend
+  useEffect(() => {
+    async function fetchUserData() {
+      const userData = await getData(1);
+      setData(userData);
+      setLoading(false); // Set loading to false once data is fetched
+    }
+
+    fetchUserData();
+  }, []);
+
+  console.log(data);
+  // Render this while data is loading
+  if (loading) {
+    return <div className="spin"></div>;
+  }
+
+  //Destructure safely
+  const { user } = data || {};
   const {
-    startWeight,
-    currentWeight,
-    targetWeight,
-    targetCalories,
-    achievedCalories,
-  } = user[0];
+    startweight,
+    currentweight,
+    targetweight,
+    targetcalories,
+    achievedcalories,
+  } = user || {};
 
   return (
     <>
@@ -24,17 +45,21 @@ export default function FitnessTracker() {
 
         {/* Weight Progress Section */}
         <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
-          <h2 className="text-xl font-semibold text-gray-700">Weight Progress</h2>
+          <h2 className="text-xl font-semibold text-gray-700">
+            Weight Progress
+          </h2>
           <div className="grid grid-cols-3 gap-4 text-center">
-            <WeightStat label="Start" value={`${startWeight} kg`} />
-            <WeightStat label="Current" value={`${currentWeight} kg`} />
-            <WeightStat label="Target" value={`${targetWeight} kg`} />
+            <WeightStat label="Start" value={`${startweight} kg`} />
+            <WeightStat label="Current" value={`${currentweight} kg`} />
+            <WeightStat label="Target" value={`${targetweight} kg`} />
           </div>
         </div>
 
         {/* Weight Loss Chart Section */}
         <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
-          <h2 className="text-xl font-semibold text-gray-700">Weight Loss Chart</h2>
+          <h2 className="text-xl font-semibold text-gray-700">
+            Weight Loss Chart
+          </h2>
           <div className="h-48 flex items-center justify-center bg-gray-200 text-gray-400 rounded">
             Placeholder for chart
           </div>
@@ -42,10 +67,18 @@ export default function FitnessTracker() {
 
         {/* Daily Stats Section */}
         <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
-          <h2 className="text-xl font-semibold text-gray-700">Daily Stats</h2>
+          <h2 className="text-xl font-semibold text-gray-700">
+            Daily Stats
+          </h2>
           <div className="grid grid-cols-2 gap-4">
-            <DailyStat label="Target Calories" value={`${targetCalories} kcal`} />
-            <DailyStat label="Achieved Calories" value={`${achievedCalories} kcal`} />
+            <DailyStat
+              label="Target Calories"
+              value={`${targetcalories} kcal`}
+            />
+            <DailyStat
+              label="Achieved Calories"
+              value={`${achievedcalories} kcal`}
+            />
             <DailyStat label="Workout Time / Goal" value="1 hour" />
             <DailyStat label="Average Workout Time" value="30 mins" />
           </div>
