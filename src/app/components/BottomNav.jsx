@@ -24,8 +24,8 @@ export default function BottomNav() {
             href={item.href}
             className={
               pathname === item.href
-                ? 'flex flex-col items-center justify-center p-2 rounded-lg bg-teal-500 font-bold'
-                : 'flex flex-col items-center justify-center p-2 rounded-lg text-green-800'
+                ? 'flex flex-col items-center justify-center p-3 rounded-lg bg-teal-500 font-bold'
+                : 'flex flex-col items-center justify-center p-3 rounded-lg text-green-800'
             }
           >
             <item.icon className='h-6 w-6 text-white' />
