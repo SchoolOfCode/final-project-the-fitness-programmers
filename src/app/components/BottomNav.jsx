@@ -23,7 +23,7 @@ export default function BottomNav() {
 
   const fetchMotivationalQuote = async () => {
     try {
-      const response = await fetch("https://zenquotes.io/api/random");
+      const response = await fetch("https://api.quotable.io/random?tags=motivational");
       const data = await response.json();
 
       if (response.ok) {
@@ -37,10 +37,10 @@ export default function BottomNav() {
               <div className="flex items-start">
                 <div className="ml-3 flex-1">
                   <p className="text-sm font-medium text-gray-900">
-                    {data.q}
+                    {data.author}
                   </p>
                   <p className="mt-1 text-sm text-gray-500 text-center">
-                    {data.a}
+                    {data.content}
                   </p>
                 </div>
               </div>
