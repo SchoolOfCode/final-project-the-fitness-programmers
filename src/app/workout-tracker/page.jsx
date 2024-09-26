@@ -61,7 +61,7 @@ export default function WorkoutTracker() {
           </div>
         </div>
 
-        <div className="absolute bottom-10 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-primaryColour hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-400">
+        <div className="absolute bottom-10 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-bold text-main rounded-full bg-primaryColour hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-400">
           <button>Submit</button>
         </div>
       </div>
