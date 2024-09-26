@@ -7,17 +7,17 @@ export default function MyProfile() {
   return (
     <>
       <Nav />
-      <div className='min-h-screen bg-main p-4 space-y-6 max-w-lg mx-auto font-sans'>
+      <div className='min-h-screen bg-main p-4 space-y-6  mx-auto font-sans'>
         <h1 className='text-3xl font-bold text-primaryColour text-center mb-4'>
           My Profile
         </h1>
 
         {/* Profile Section */}
-        <div className='rounded-lg shadow-md p-6 space-y-6'>
+        <div className='rounded-lg  p-6 space-y-6 '>
           {/* Profile Image */}
           <div className='flex justify-center'>
             <Image
-              className='w-32 h-32 rounded-full border-2'
+              className='w-32 h-32 rounded-full border-2 bg-white'
               src={'/profile.jpg'}
               alt=''
               width={150}
