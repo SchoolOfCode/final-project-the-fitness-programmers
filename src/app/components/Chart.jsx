@@ -24,15 +24,18 @@ export default function WeightLossChart({
     { name: 'Goal Weight', weight: goalWeight },
   ];
 
+  // Relatable colors for the weight loss journey (darker to lighter shades)
   const colors = {
-    'Start Weight': 'hsla(4, 100%, 50%, 1)', // Red
-    'Current Weight': 'hsla(226, 100%, 50%, 1)', // Blue
-    'Goal Weight': 'hsla(123, 100%, 50%, 1)', // Green
+    'Start Weight': 'rgb(102, 102, 255)', // Darker blue for start weight
+    'Current Weight': 'rgb(77, 182, 172)', // Intermediate teal for current weight
+    'Goal Weight': 'rgb(50, 205, 50)', // Light green for goal weight
   };
 
   return (
-    <div className='w-full max-w-3xl mx-auto p-4 bg-white rounded-lg shadow-md'>
-      <h2 className='text-xl font-bold mb-4 text-center'>{title}</h2>
+    <div className='w-full max-w-3xl mx-auto p-4 bg-gray-100 rounded-lg shadow-md text-gray-800'>
+      <h2 className='text-2xl font-bold mb-4 text-center text-gray-700'>
+        {title}
+      </h2>
       <div className='w-full h-[300px]'>
         <ResponsiveContainer width='100%' height='100%'>
           <BarChart data={data}>
@@ -42,20 +45,19 @@ export default function WeightLossChart({
             <Legend />
             <Bar dataKey='weight' radius={[4, 4, 0, 0]}>
               {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={colors[entry.name]} />
-              ))}
-              {data.map((entry, index) => (
-                <text
-                  x={index * (100 / 3) + 100 / 6}
-                  y={entry.weight}
-                  textAnchor='middle'
-                  dy={-10}
-                  fill='#333'
-                  fontSize={12}
-                  key={`label-${index}`}
-                >
-                  {entry.weight}
-                </text>
+                <React.Fragment key={`${entry.name}-${index}`}>
+                  <Cell fill={colors[entry.name]} />
+                  <text
+                    x={index * (100 / 3) + 100 / 6}
+                    y={entry.weight > 5 ? entry.weight : 10} // Ensures labels don't overlap with the bottom
+                    textAnchor='middle'
+                    dy={-10}
+                    fill='#555'
+                    fontSize={12}
+                  >
+                    {entry.weight}
+                  </text>
+                </React.Fragment>
               ))}
             </Bar>
           </BarChart>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import getData from "./utils.js";
 import Nav from './components/Nav';
 import BottomNav from './components/BottomNav';
-import Chart from './components/Chart'
+import WeightLossChart from './components/Chart'
 
 export default function FitnessTracker() {
   const [data, setData] = useState(null);
@@ -49,9 +49,6 @@ export default function FitnessTracker() {
 
         {/* Weight Progress Section */}
         <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
-          <h2 className="text-xl font-semibold text-gray-700">
-            Weight Progress
-          </h2>
           <div className="grid grid-cols-3 gap-3 text-center">
             <WeightStat label="Start" value={`${startweight} kg`} />
             <WeightStat label="Current" value={`${currentweight} kg`} />
@@ -62,7 +59,7 @@ export default function FitnessTracker() {
         {/* Weight Loss Chart Section */}
         <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
           <h1>Weight Loss Progress</h1>
-          <Chart
+          <WeightLossChart
             startWeight={user.startweight}
             currentWeight={user.currentweight}
             goalWeight={user.targetweight}

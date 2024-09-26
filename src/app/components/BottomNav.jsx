@@ -5,11 +5,11 @@ import { usePathname } from 'next/navigation';
 import { Goal, Dumbbell, Home, GlassWater, SmilePlus } from 'lucide-react';
 
 const navItems = [
-  { href: './goal-setter', icon: Goal, label: 'Goal' },
-  { href: './workout-tracker', icon: Dumbbell, label: 'Workout' },
-  { href: './', icon: Home, label: 'Home' },
-  { href: './water-tracker', icon: GlassWater, label: 'Water' },
-  { href: './', icon: SmilePlus, label: 'Motivation' },
+  { href: './goal-setter', icon: Goal, label: 'Goal', id: 1 },
+  { href: './workout-tracker', icon: Dumbbell, label: 'Workout', id: 2 },
+  { href: './', icon: Home, label: 'Home', id: 3 },
+  { href: './water-tracker', icon: GlassWater, label: 'Water', id: 4 },
+  { href: './', icon: SmilePlus, label: 'Motivation', id: 5 },
 ];
 
 export default function BottomNav() {
@@ -20,7 +20,7 @@ export default function BottomNav() {
       <div className='flex justify-between items-center max-w-md mx-auto'>
         {navItems.map((item) => (
           <Link
-            key={item.href}
+            key={item.id}
             href={item.href}
             className={
               pathname === item.href

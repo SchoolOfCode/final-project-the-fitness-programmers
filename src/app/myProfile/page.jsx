@@ -1,10 +1,12 @@
 import { user } from '../data';
-import Link from 'next/link';
 import Image from 'next/image';
+import BottomNav from '../components/BottomNav';
+import Nav from '../components/Nav';
 
 export default function MyProfile() {
   return (
     <>
+      <Nav />
       <div className='min-h-screen bg-main p-4 space-y-6 max-w-lg mx-auto font-sans'>
         <h1 className='text-3xl font-bold text-primaryColour text-center mb-4'>
           My Profile
@@ -58,16 +60,8 @@ export default function MyProfile() {
             </p>
           </div>
         </div>
-
-        <Link
-          href='/'
-          className='text-primaryColour hover:text-teal-200 text-sm font-medium'
-        >
-          <span class='w-full flex justify-center py-2 px-4 border border-transparent text-l font-medium rounded-full text-white bg-primaryColour font-extrabold'>
-            Dashboard
-          </span>
-        </Link>
       </div>
+      <BottomNav />
     </>
   );
 }
