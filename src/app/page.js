@@ -93,10 +93,11 @@ export default function FitnessTracker() {
           <div className="text-center grid grid-cols-2 gap-4">
             {data.workouts.map((item, index) => {
               return (
-                <div key={index}>
-                  <p>{item.type}</p>
-                  <p>{`${item.duration} mins`}</p>
-                </div>
+                <DailyStat
+                key={index}
+                label={item.type}
+                value={`${item.duration} mins`}
+                    />
               );
             })}
           </div>
@@ -126,3 +127,5 @@ function DailyStat({ label, value }) {
     </div>
   );
 }
+
+
