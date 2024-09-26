@@ -9,7 +9,7 @@ export default function LoginPage() {
        <div className="text-center">
   <h2 className="mt-2 text-3xl font-bold text-teal-400">SIGN UP</h2>
   <p className="text-teal-300 hover:text-teal-200 text-sm font-medium">
-    Let’s get started. Are you ready for a simpler path to a healthier, 
+    Let’s get started. Are you ready for a simpler path to a healthier and 
     stronger you? Your journey starts here!
   </p>
 </div>
