@@ -93,8 +93,8 @@ export default function FitnessTracker() {
 function WeightStat({ label, value }) {
   return (
     <div>
-      <p className="text-sm text-gray">{label}</p>
-      <p className="text-lg font-semibold text-gray-800">{value}</p>
+      <p className="text-sm text-fitbitgrey">{label}</p>
+      <p className="text-lg font-semibold text-offblack">{value}</p>
     </div>
   );
 }

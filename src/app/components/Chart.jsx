@@ -23,17 +23,17 @@ export default function WeightLossChart({
     { name: 'Current Weight', weight: currentWeight },
     { name: 'Goal Weight', weight: goalWeight },
   ];
-
+  
   // Relatable colors for the weight loss journey (darker to lighter shades)
   const colors = {
-    'Start Weight': 'rgb(102, 102, 255)', // Darker blue for start weight
-    'Current Weight': 'rgb(77, 182, 172)', // Intermediate teal for current weight
-    'Goal Weight': 'rgb(50, 205, 50)', // Light green for goal weight
+    'Start Weight': 'rgb(94, 234, 212)', // Darker blue for start weight
+    'Current Weight': 'rgb(94, 234, 212)', // Intermediate teal for current weight
+    'Goal Weight': 'rgb(94, 234, 212)', // Light green for goal weight
   };
 
   return (
     <div className='w-full max-w-3xl mx-auto p-4 bg-gray-100 rounded-lg text-gray-800'>
-      <h2 className='text-2xl font-bold mb-4 text-center text-gray-700'>
+      <h2 className='text-2xl font-bold mb-4 text-center text-offblack'>
         {title}
       </h2>
       <div className='w-full h-[300px]'>
