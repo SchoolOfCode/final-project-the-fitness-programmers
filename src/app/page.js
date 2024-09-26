@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import getData from "./utils.js";
 import Nav from './components/Nav';
 import BottomNav from './components/BottomNav';
+import WeightLossChart from './components/WeightLossChart';
 
 export default function FitnessTracker() {
   const [data, setData] = useState(null);
@@ -60,12 +61,13 @@ export default function FitnessTracker() {
 
         {/* Weight Loss Chart Section */}
         <div className="bg-white rounded-lg shadow-md p-6 space-y-4">
-          <h2 className="text-xl font-semibold text-gray-700">
-            Weight Loss Chart
-          </h2>
-          <div className="h-48 flex items-center justify-center bg-gray-200 text-gray-400 rounded">
-            Placeholder for chart
-          </div>
+          <h1>Weight Loss Progress</h1>
+          <WeightLossChart
+            startWeight={user.startweight}
+            currentWeight={user.currentweight}
+            goalWeight={user.targetweight}
+          />
+
         </div>
 
         {/* Daily Stats Section */}
