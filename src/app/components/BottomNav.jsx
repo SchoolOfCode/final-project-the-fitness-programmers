@@ -6,10 +6,10 @@ import { Goal, Dumbbell, Home, GlassWater, SmilePlus } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
 
 const navItems = [
-  { href: '/goal', icon: Goal, label: 'Goal' },
-  { href: '/workout', icon: Dumbbell, label: 'Workout' },
+  { href: '/goal-setter', icon: Goal, label: 'Goal' },
+  { href: '/workout-tracker', icon: Dumbbell, label: 'Workout' },
   { href: '/', icon: Home, label: 'Home' },
-  { href: '/water', icon: GlassWater, label: 'Water' },
+  { href: '/water-tracker', icon: GlassWater, label: 'Water' },
 ];
 
 export default function BottomNav() {
@@ -57,6 +57,7 @@ export default function BottomNav() {
       toast.error('An error occurred while fetching the quote.');
     }
   };
+
 
   return (
     <nav className='fixed bottom-0 left-0 right-0 shadow-lg bg-primaryColour'>
