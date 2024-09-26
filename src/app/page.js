@@ -39,8 +39,11 @@ export default function FitnessTracker() {
     <>
       <Nav />
       <div className="min-h-screen bg-gray-50 p-4 space-y-6 max-w-lg mx-auto font-sans">
-        <h1 className="text-2xl font-bold text-gray-800 text-center">
-          Fitness Tracker
+        <h1 className="text-2xl font-bold text-primaryColour text-center">
+          Welcome, {user.name}
+        </h1>
+        <h1 className="text-xl font-bold text-gray-800 text-center">
+          Progress tracker...
         </h1>
 
         {/* Weight Progress Section */}
