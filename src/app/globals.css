@@ -6,10 +6,10 @@
   width: 50px;
   aspect-ratio: 1/1;
   margin: auto;
-  margin-top: 30%;
+  margin-top: 40%;
 }
 .spin::after {
-  content: "";
+  content: '';
   display: block;
   width: 50px;
   aspect-ratio: 1/1;

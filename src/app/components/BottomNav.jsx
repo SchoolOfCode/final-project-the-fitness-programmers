@@ -5,11 +5,11 @@ import { usePathname } from 'next/navigation';
 import { Goal, Dumbbell, Home, GlassWater, SmilePlus } from 'lucide-react';
 
 const navItems = [
-  { href: '/goal', icon: Goal, label: 'Goal' },
-  { href: '/workout', icon: Dumbbell, label: 'Workout' },
-  { href: '/', icon: Home, label: 'Home' },
-  { href: '/water', icon: GlassWater, label: 'Water' },
-  { href: '/motivation', icon: SmilePlus, label: 'Motivation' },
+  { href: './goal-setter', icon: Goal, label: 'Goal' },
+  { href: './workout-tracker', icon: Dumbbell, label: 'Workout' },
+  { href: './', icon: Home, label: 'Home' },
+  { href: './water-tracker', icon: GlassWater, label: 'Water' },
+  { href: './', icon: SmilePlus, label: 'Motivation' },
 ];
 
 export default function BottomNav() {
