@@ -67,7 +67,6 @@ export default function FitnessTracker() {
             currentWeight={user.currentweight}
             goalWeight={user.targetweight}
           />
-
         </div>
 
         {/* Daily Stats Section */}
