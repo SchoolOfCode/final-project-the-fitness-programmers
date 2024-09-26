@@ -45,20 +45,19 @@ export default function WeightLossChart({
             <Legend />
             <Bar dataKey='weight' radius={[4, 4, 0, 0]}>
               {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={colors[entry.name]} />
-              ))}
-              {data.map((entry, index) => (
-                <text
-                  x={index * (100 / 3) + 100 / 6}
-                  y={entry.weight}
-                  textAnchor='middle'
-                  dy={-10}
-                  fill='#555' // Darker text for better contrast
-                  fontSize={12}
-                  key={`label-${index}`}
-                >
-                  {entry.weight}
-                </text>
+                <React.Fragment key={`${entry.name}-${index}`}>
+                  <Cell fill={colors[entry.name]} />
+                  <text
+                    x={index * (100 / 3) + 100 / 6}
+                    y={entry.weight > 5 ? entry.weight : 10} // Ensures labels don't overlap with the bottom
+                    textAnchor='middle'
+                    dy={-10}
+                    fill='#555'
+                    fontSize={12}
+                  >
+                    {entry.weight}
+                  </text>
+                </React.Fragment>
               ))}
             </Bar>
           </BarChart>
