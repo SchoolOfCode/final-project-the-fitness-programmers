@@ -12,9 +12,12 @@ export default function Nav() {
             <Dumbbell className='h-8 w-8 mr-2 text-white' />
             <span className='font-semibold text-white text-lg'>FitEase</span>
           </Link>
-          <div className='w-10 h-10 bg-white rounded-full flex items-center justify-center'>
+          <Link
+            href='./myProfile'
+            className='w-10 h-10 bg-white rounded-full flex items-center justify-center'
+          >
             <UserRound className='text-gray-800' />
-          </div>
+          </Link>
         </div>
       </div>
     </nav>
