@@ -18,7 +18,8 @@ function TextBox({ label, placeholder, onValueChange }) {
         placeholder={placeholder}
         value={inputValue}
         onChange={handleInputChange}
-        className="block w-full px-3 py-2 pl-10 border  placeholder-primaryColour text-purple rounded-full focus:outline-none focus:ring-blue-500 focus:border-primaryColour-500 focus:z-10 sm:text-sm block"      />
+        min={0}
+        className="block w-full px-3 py-2 pl-10 border border-gray-300 text-purple rounded-full focus:outline-none focus:ring-blue-500 focus:border-primaryColour-500 focus:z-10 sm:text-sm block"      />
     
     </div>
   );

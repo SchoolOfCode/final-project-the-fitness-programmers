@@ -12,10 +12,10 @@ import {
 import toast, { Toaster } from "react-hot-toast";
 
 const navItems = [
-  { href: "/goal-setter", icon: Goal, label: "Goal" },
-  { href: "/workout-tracker", icon: Dumbbell, label: "Workout" },
-  { href: "/", icon: Home, label: "Home" },
-  { href: "/water-tracker", icon: GlassWater, label: "Water" },
+  { href: '/goal-setter', icon: Goal, label: 'Goal' },
+  { href: '/workout-tracker', icon: Dumbbell, label: 'Workout' },
+  { href: '/', icon: Home, label: 'Home' },
+  { href: '/water-tracker', icon: GlassWater, label: 'Water' },
 ];
 
 export default function BottomNav() {
@@ -63,9 +63,10 @@ export default function BottomNav() {
     }
   };
 
+
   return (
-    <nav className="sticky bottom-0 left-0 right-0 shadow-lg bg-primaryColour">
-      <div className="flex gap-12 items-center max-w-md mx-auto">
+    <nav className='fixed bottom-0 left-0 right-0 shadow-lg bg-primaryColour'>
+      <div className='flex gap-8 justify-center items-center max-w-md mx-auto'>
         {navItems.map((item) => (
           <Link
             key={item.href}

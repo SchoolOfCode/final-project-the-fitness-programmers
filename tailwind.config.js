@@ -10,6 +10,10 @@ module.exports = {
       colors: {
         main: "#6b7280",
         primaryColour: "#5eead4",
+        applegreen: "#eff1ef",
+        offwhite: "#fafdfa",
+        offblack: "#1a1b1b",
+        fitbitgrey: "#565F5D",
       },
     },
   },

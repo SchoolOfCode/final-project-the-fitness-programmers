@@ -17,6 +17,7 @@ function DateInput({ label, onDateChange }) {
         type="date"
         value={selectedDate}
         onChange={handleDateChange}
+        className="w-full p-2 pl-10 bg-white border border-gray-300 rounded-full text-main cursor-pointer focus:outline-none focus:outline-none focus:ring-teal-400 focus:border-teal-400 hover:bg-gray-100 transition duration-300"
       />
     </div>
   );
