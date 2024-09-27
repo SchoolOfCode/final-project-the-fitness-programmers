@@ -1,7 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import DropdownMenu from "../components/DropdownMenu";
-import TextBox from "../components/TextBox";
 import { Dumbbell } from "lucide-react";
 import Nav from "../components/Nav";
 import BottomNav from "../components/BottomNav";
@@ -57,7 +55,7 @@ export default function WorkoutTracker() {
                 className="block w-full px-3 py-2 pl-10 border placeholder-primaryColour text-primaryColour rounded-full focus:outline-none focus:ring-teal-400 focus:border-teal-400 focus:z-10 sm:text-sm block"
                 placeholder="Enter minutes"
                 onValueChange={handleValueChange}
-                min={0}
+                min={0} 
               />
             </div>
           </div> */}
