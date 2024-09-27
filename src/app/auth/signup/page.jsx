@@ -6,17 +6,16 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-500 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
-       <div className="text-center">
-  <h2 className="mt-2 text-3xl font-bold text-teal-400">SIGN UP</h2>
-  <p className="text-teal-300 hover:text-teal-200 text-sm font-medium">
-    Let’s get started. Are you ready for a simpler path to a healthier and 
-    stronger you? Your journey starts here!
-  </p>
-</div>
+        <div className="text-center">
+          <h2 className="mt-2 text-3xl font-bold text-teal-400">SIGN UP</h2>
+          <p className="text-teal-300 hover:text-teal-200 text-sm font-medium">
+            Let’s get started. Are you ready for a simpler path to a healthier and 
+            stronger you? Your journey starts here!
+          </p>
+        </div>
 
         <form className="mt-8 space-y-6" action="#" method="POST">
           <div className="rounded-md shadow-sm space-y-4">
-            
             <div className="relative flex items-center">
               <Mail className="absolute left-3 text-teal-400" size={20} />
               <input
@@ -30,7 +29,6 @@ export default function LoginPage() {
               />
             </div>
 
-            
             <div className="relative flex items-center">
               <Lock className="absolute left-3 text-teal-400" size={20} />
               <input
@@ -47,8 +45,8 @@ export default function LoginPage() {
             <div className="relative flex items-center">
               <Lock className="absolute left-3 text-teal-400" size={20} />
               <input
-                id="password"
-                name="password"
+                id="password-confirm"
+                name="password-confirm"
                 type="password"
                 autoComplete="current-password"
                 required
@@ -58,35 +56,32 @@ export default function LoginPage() {
             </div>
           </div>
 
-         
           <div className="flex items-center">
-  <input
-    id="terms"
-    name="terms"
-    type="checkbox"
-    required
-    className="h-4 w-4 text-teal-400 border-gray-300 rounded focus:ring-teal-400"
-  />
-  <label htmlFor="terms" className="ml-2 block text-sm text-teal-300">
-    I agree to the terms and conditions
-  </label>
-</div>
+            <input
+              id="terms"
+              name="terms"
+              type="checkbox"
+              required
+              className="h-4 w-4 text-teal-400 border-gray-300 rounded focus:ring-teal-400"
+            />
+            <label htmlFor="terms" className="ml-2 block text-sm text-teal-300">
+              I agree to the terms and conditions
+            </label>
+          </div>
 
-          
-          <div>
+          {/* Link wrapping the button */}
+          <Link href='/auth/signup-details'>
             <button
-              type="submit"
+              type="button"
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-gray-500 bg-teal-300 hover:bg-teal-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-400"
             >
               Sign Up
             </button>
-          </div>
+          </Link>
 
-         
           <div className="text-center mt-4">
             <Link href="/auth/signup" className="text-teal-300 hover:text-teal-200 text-sm font-medium">
               Already have an account? Login
-
             </Link>
           </div>
         </form>
@@ -94,3 +89,4 @@ export default function LoginPage() {
     </div>
   );
 }
+
