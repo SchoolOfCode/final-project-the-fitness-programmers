@@ -1,38 +1,38 @@
-"use client";
-import React, { useState } from "react";
-import { Dumbbell } from "lucide-react";
-import Nav from "../components/Nav";
-import BottomNav from "../components/BottomNav";
-import NewWorkoutForm from "../components/NewWorkoutForm";
+'use client';
+import React, { useState } from 'react';
+import { Dumbbell } from 'lucide-react';
+import Nav from '../components/Nav';
+import BottomNav from '../components/BottomNav';
+import NewWorkoutForm from '../components/NewWorkoutForm';
 
 export default function WorkoutTracker() {
   const handleValueChange = (value) => {
-    console.log("Minutes entered:", value);
+    console.log('Minutes entered:', value);
   };
 
   const exerciseOptions = [
-    "Running",
-    "Free-Weights",
-    "Hiking",
-    "Cycling",
-    "Swimming",
-    "HIIT",
-    "Triathalon",
+    'Running',
+    'Free-Weights',
+    'Hiking',
+    'Cycling',
+    'Swimming',
+    'HIIT',
+    'Triathalon',
   ];
 
   return (
     <>
       <Nav />
-      <div className="max-w-lg mx-auto w-full bg-applegreen flex-col space-y-20 min-h-screen flex items-center justify-center bg-white-500 px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="heading text-center">
-          <div className="flex justify-center">
-            <Dumbbell className="text-primaryColour" size={80} />
+      <div className='max-w-lg mx-auto w-full bg-applegreen flex-col space-y-20 min-h-screen flex items-center justify-center bg-white-500 px-4 pb-20 sm:px-6 lg:px-8'>
+        <div className='heading text-center'>
+          <div className='flex justify-center'>
+            <Dumbbell className='text-primaryColour' size={80} />
           </div>
-          <h1 className="mt-2 text-4xl font-bold text-offblack">
+          <h1 className='mt-2 text-4xl font-bold text-offblack'>
             Set your workout
           </h1>
         </div>
-        <div className="flex-col space-y-2 w-full">
+        <div className='flex-col space-y-2 w-full'>
           <NewWorkoutForm />
           {/* <div className="h-32 bg-offwhite text-center rounded-t-2xl px-10 py-3 space-y-4">
             <div className="block w-full rounded-md space-y-4">
